@@ -12,6 +12,7 @@
 		157D091D1E76AE0A007BE4D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157D091B1E76AE0A007BE4D5 /* Main.storyboard */; };
 		157D091F1E76AE0A007BE4D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 157D091E1E76AE0A007BE4D5 /* Assets.xcassets */; };
 		157D09221E76AE0A007BE4D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157D09201E76AE0A007BE4D5 /* LaunchScreen.storyboard */; };
+		157D092A1E76B405007BE4D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D09291E76B405007BE4D5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		157D091E1E76AE0A007BE4D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		157D09211E76AE0A007BE4D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		157D09231E76AE0A007BE4D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		157D09291E76B405007BE4D5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				157D09171E76AE0A007BE4D5 /* AppDelegate.swift */,
 				157D09191E76AE0A007BE4D5 /* ViewController.swift */,
+				157D09291E76B405007BE4D5 /* Constants.swift */,
 				157D091B1E76AE0A007BE4D5 /* Main.storyboard */,
 				157D091E1E76AE0A007BE4D5 /* Assets.xcassets */,
 				157D09201E76AE0A007BE4D5 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				157D091A1E76AE0A007BE4D5 /* ViewController.swift in Sources */,
 				157D09181E76AE0A007BE4D5 /* AppDelegate.swift in Sources */,
+				157D092A1E76B405007BE4D5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
