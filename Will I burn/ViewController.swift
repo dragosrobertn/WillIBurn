@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var timeToburn: UILabel!
+    @IBOutlet weak var timeToBurnLabel: UILabel!
     
     let locationManager = CLLocationManager()
     var coords = CLLocationCoordinate2D(latitude: 53.48, longitude: -2.27)
@@ -21,6 +21,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        updateLabel(text: "Calculating...")
+        getLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,25 +70,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getJSONresult(response : URLResponse?, data: Data?, error: Error?) -> Void{
-        do {
-            if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-//                print("ASYNC \(jsonResult)")
-                if let data = jsonResult["data"] as? Dictionary<String, AnyObject>{
-                    if let weather = data["weather"] as? [Dictionary<String, AnyObject>]{
-                        if let uv = weather[0]["uvIndex"] as? String {
-                            if let uvI = Int(uv) {
-//                                self.uvIndex = uvI
-                                let minutes = checkTimeToBurn(uvIndex: uvI)
-                                
-                                timeToburn.text = String("\(minutes) minutes until you burn")
-                                
+        
+        DispatchQueue.main.async {
+            do {
+                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                    if let data = jsonResult["data"] as? Dictionary<String, AnyObject>{
+                        if let weather = data["weather"] as? [Dictionary<String, AnyObject>]{
+                            if let uv = weather[0]["uvIndex"] as? String {
+                                if let uvI = Int(uv) {
+                                    let minutes = self.checkTimeToBurn(uvIndex: uvI)
+                                    
+                                    self.updateLabel(text: "\(minutes) minutes until you burn")
+                                    
+                                }
                             }
                         }
                     }
                 }
+            } catch let error as NSError {
+                print(error.localizedDescription)
             }
-        } catch let error as NSError {
-            print(error.localizedDescription)
         }
     }
     
@@ -106,6 +109,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             return 0
         }
         
+    }
+    
+    func updateLabel(text : String) -> Void {
+        print("setting min \(text)")
+        timeToBurnLabel.text = text
     }
     
     
