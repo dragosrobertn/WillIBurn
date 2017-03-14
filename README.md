@@ -4,7 +4,7 @@ XCode Project written in Swift using more advanced principles and interacting wi
 a RESTful API backend to figure out if the UV Index at the location at which the
 user is currently at will cause them any harm after a prolonged exposure period.
 
-![Will I burn?]()
+![Will I burn?](https://cloud.githubusercontent.com/assets/10534896/23898084/96c84f5e-08a7-11e7-855a-c7ade3fe53d5.png)
 # Learning Outcomes
 
 - Interacting with a RESTful API Backend
