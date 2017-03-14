@@ -10,7 +10,7 @@ import Foundation
 
 struct WeatherURL {
     private let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx"
-    private let key = "92982cb5bc664fe88a0105237171303"
+    private let key = "&key=92982cb5bc664fe88a0105237171303"
     private let numDayForecast = "&num_of_days=1"
     private let format = "&format=json"
     private var coordstr = ""
